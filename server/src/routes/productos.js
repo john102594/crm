@@ -36,7 +36,6 @@ router.get("/", async (req, res) => {
       [Sequelize.col("kd.costo_promund"), "costo_promund"],
       [Sequelize.literal("saldo * costo_promund"), "costo_total"],
     ],
-    row: true,
     include: [
       {
         model: Kardex,
