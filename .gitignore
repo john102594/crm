@@ -1,9 +1,0 @@
-#server
-/server/node_modules
-/server/.env
-
-#client
-/client/.env
-/client/node_modules
-# production
-/client//build
