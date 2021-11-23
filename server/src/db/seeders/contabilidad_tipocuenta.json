@@ -1,0 +1,18 @@
+[
+	{
+		"id" : 1,
+		"name" : "clase"
+	},
+	{
+		"id" : 2,
+		"name" : "grupo"
+	},
+	{
+		"id" : 3,
+		"name" : "cuenta"
+	},
+	{
+		"id" : 4,
+		"name" : "subcuenta"
+	}
+]
