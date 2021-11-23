@@ -14,8 +14,8 @@ const config = {
   },
   db: {
     host: "localhost",
-    user: "root",
-    password: "root",
+    user: "admin",
+    password: "admin",
     database: "cajadb",
     dialect: "mysql",
   },

@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ThemeProvider } from "@material-ui/core/Styles";
+import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./temaconfig";
 import Contenedor from "./components/Contenedor";
 import { Provider } from "react-redux";

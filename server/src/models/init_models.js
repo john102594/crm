@@ -4,7 +4,7 @@ import Cuenta_contable from "./contabilidad/cuenta_contable";
 import Cuenta_type from "./contabilidad/cuenta_type";
 import Detalle_ingreso from "./detalle_ingreso";
 import Ingreso from "./ingreso";
-import Detalle_venta from "./Detalle_venta";
+import Detalle_venta from "./detalle_venta";
 import Venta from "./venta";
 import Inventario_kardex from "./inventario_kardex";
 import Producto from "./producto";
@@ -30,6 +30,7 @@ Movimiento.belongsTo(Cuenta_contable, {
 
 //Kardex
 Producto.hasMany(Inventario_kardex, {
+  as: "kd",
   foreignKey: { name: "producto_id", allowNull: false },
 });
 Inventario_kardex.belongsTo(Producto, {
@@ -117,5 +118,5 @@ Persona.belongsTo(Cuenta_contable, {
   },
 });
 
-// Detalle_ingreso.sync({  true });
-// Ingreso.sync({ alter: true });
+// Inventario_kardex.sync({  true });
+// Inventario_kardex.sync({ alter: true });

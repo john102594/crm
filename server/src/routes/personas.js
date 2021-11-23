@@ -1,5 +1,5 @@
 import { Router } from "express";
-import Person from "../models/Persona";
+import Person from "../models/persona";
 import Cuenta_contable from "../models/contabilidad/cuenta_contable";
 import db from "../db/connection";
 

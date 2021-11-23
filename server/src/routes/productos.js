@@ -24,23 +24,28 @@ router.get("/", async (req, res) => {
     group: "producto_id",
   });
   const idfilterarray = await idfilters.map((element) => element.id);
-  const productos = await Kardex.findAll({
-    where: {
-      id: idfilterarray,
-    },
+
+  const productos = await Producto.findAll({
+    order: ["id"],
     attributes: [
-      [Sequelize.col("Producto.id"), "id"],
-      [Sequelize.col("Producto.codigo"), "codigo"],
-      [Sequelize.col("Producto.nombre"), "nombre"],
-      "saldo",
-      "costo_promund",
+      "id",
+      "codigo",
+      "nombre",
+      "active",
+      [Sequelize.col("kd.saldo"), "saldo"],
+      [Sequelize.col("kd.costo_promund"), "costo_promund"],
       [Sequelize.literal("saldo * costo_promund"), "costo_total"],
     ],
-    order: ["producto_id"],
+    row: true,
     include: [
       {
-        model: Producto,
+        model: Kardex,
+        as: "kd",
         attributes: [],
+        required: false,
+        where: {
+          id: idfilterarray,
+        },
       },
     ],
   });
